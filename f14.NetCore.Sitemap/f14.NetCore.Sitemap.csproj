@@ -2,6 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp1.0</TargetFramework>
+    <Authors>f14shm4n</Authors>
+    <Company>f14shm4n</Company>
+    <Description>Provides classes and helpers for the sitemap generation.</Description>
+    <Copyright>f14shm4n</Copyright>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/f14shm4n/f14.NetCore.Sitemap.git</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/f14shm4n/f14.NetCore.Sitemap.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>netcore;sitemap</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
 </Project>
