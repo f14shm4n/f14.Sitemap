@@ -2,7 +2,7 @@
 
 This lib contains a common classes for building sitemap.
 
-**This lib does not provide any automation methods for creating a sitemap for specific websites.
+**This lib does not provide any automation methods for creating a sitemap for specific websites.**
 
 # Install
 
