@@ -8,16 +8,16 @@ using System.Xml.Linq;
 namespace f14.NetCore.Sitemap
 {
     /// <summary>
-    /// This is the implementation of the <see cref="ISitemapBuilder{T}"/>.
+    /// Provides methods for create a sitemap.
     /// </summary>
-    public sealed class SitemapBuilder
+    public class SitemapBuilder
     {
         /// <summary>
-        /// Build <see cref="XDocument"/> with provided builder data.
+        /// Builds <see cref="XDocument"/> with a provided data.
         /// </summary>
-        /// <param name="data">The specified builder data.</param>
+        /// <param name="data">The specified data.</param>
         /// <returns><see cref="XDocument"/> as sitemap.</returns>
-        public XDocument Build(ISitemapBuilderData data)
+        public static XDocument Build(ISitemapBuilderData data)
         {
             var rootElement = data.RootElement;
             rootElement.Add(data.Elements.Select(x => x.ToXElement()));

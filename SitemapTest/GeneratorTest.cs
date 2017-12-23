@@ -42,7 +42,7 @@ namespace SitemapTest
                 };
             }
 
-            var xDoc = new SitemapBuilder().Build(new SitemapBuilderData
+            var xDoc = SitemapBuilder.Build(new SitemapBuilderData
             {
                 RootElement = new XElement(Constants.SitemapIndexName),
                 Elements = items
@@ -84,7 +84,7 @@ namespace SitemapTest
                 items[i] = urlEntry;
             }
 
-            var xDoc = new SitemapBuilder().Build(new SitemapBuilderData
+            var xDoc = SitemapBuilder.Build(new SitemapBuilderData
             {
                 RootElement = new XElement(Constants.UrlsetName, Constants.GoogleImageAttribute),
                 Elements = items
