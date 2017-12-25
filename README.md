@@ -55,11 +55,7 @@ How to build:
   items.Add(postsIndex);
   
   // Create builder data and build sitemap
-  var xDoc = SitemapBuilder.Build(new SitemapBuilderData
-  {
-      RootElement = new XElement(Constants.SitemapIndexName), // Create root xml element = sitemapindex
-      Elements = items // Add our indexes
-  });
+  var xDoc = new XmlSitemapBuilder(new XElement(Constants.SitemapIndexName), items).Build();
   // Save sitemap to the file
   xDoc.Save("sitemap_index.xml");
 
@@ -114,11 +110,7 @@ How to build:
 
   items.Add(urlEntry);
   // Create builder data and build sitemap
-  var xDoc = SitemapBuilder.Build(new SitemapBuilderData
-  {
-      RootElement = new XElement(Constants.UrlsetName, Constants.GoogleImageAttribute), // Create root xml element for urlset
-      Elements = items // Set entry collection
-  });
+  var xDoc = new XmlSitemapBuilder(new XElement(Constants.UrlsetName, Constants.GoogleImageAttribute), items).Build();
   
   xDoc.Save("sitemap_urlset.xml");
 ```
