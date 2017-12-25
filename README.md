@@ -6,7 +6,7 @@ This lib contains a common classes for building sitemap.
 
 # Install
 
-[Nuget](https://www.nuget.org/packages/f14.NetCore.Sitemap): `Install-Package f14.NetCore.Sitemap -Version 1.0.0`
+[Nuget](https://www.nuget.org/packages/f14.NetCore.Sitemap): `Install-Package f14.NetCore.Sitemap -Version 1.1.0`
 
 # Usage
 
