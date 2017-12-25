@@ -42,11 +42,7 @@ namespace SitemapTest
                 };
             }
 
-            var xDoc = SitemapBuilder.Build(new SitemapBuilderData
-            {
-                RootElement = new XElement(Constants.SitemapIndexName),
-                Elements = items
-            });
+            var xDoc = new XmlSitemapBuilder(new XElement(Constants.SitemapIndexName), items).Build();
 
             Assert.Equal(count, xDoc.Root.Descendants(Constants.NS + "sitemap").Count());
 
@@ -84,11 +80,7 @@ namespace SitemapTest
                 items[i] = urlEntry;
             }
 
-            var xDoc = SitemapBuilder.Build(new SitemapBuilderData
-            {
-                RootElement = new XElement(Constants.UrlsetName, Constants.GoogleImageAttribute),
-                Elements = items
-            });
+            var xDoc = new XmlSitemapBuilder(new XElement(Constants.UrlsetName, Constants.GoogleImageAttribute), items).Build();
 
             Assert.Equal(count, xDoc.Root.Descendants(Constants.NS + "url").Count());
 
