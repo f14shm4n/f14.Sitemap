@@ -6,7 +6,7 @@ This lib contains a common classes for building sitemap.
 
 # Install
 
-[Nuget](https://www.nuget.org/packages/f14.NetCore.Sitemap): `Install-Package f14.NetCore.Sitemap -Version 1.1.0`
+[Nuget](https://www.nuget.org/packages/f14.Sitemap): `Install-Package f14.Sitemap`
 
 # Usage
 
@@ -54,8 +54,8 @@ How to build:
   items.Add(categoriesIndex);
   items.Add(postsIndex);
   
-  // Create builder data and build sitemap
-  var xDoc = new XmlSitemapBuilder(new XElement(Constants.SitemapIndexName), items).Build();
+  // Build sitemap
+  var xDoc = SitemapBuilder.BuildIndexMap(items);
   // Save sitemap to the file
   xDoc.Save("sitemap_index.xml");
 
@@ -109,9 +109,8 @@ How to build:
   });
 
   items.Add(urlEntry);
-  // Create builder data and build sitemap
-  var xDoc = new XmlSitemapBuilder(new XElement(Constants.UrlsetName, Constants.GoogleImageAttribute), items).Build();
-  
+  // Build sitemap
+  var xDoc = SitemapBuilder.BuildUrlset(items);  
   xDoc.Save("sitemap_urlset.xml");
 ```
 
