@@ -12,7 +12,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>NetStandard;Net45;Sitemap</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
     <PackageId>f14.Sitemap</PackageId>
     <RootNamespace>f14.Sitemap</RootNamespace>
     <AssemblyName>f14.Sitemap</AssemblyName>
