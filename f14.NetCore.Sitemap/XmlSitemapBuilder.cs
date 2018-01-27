@@ -1,11 +1,10 @@
-﻿using f14.NetCore.Sitemap.Abstractions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace f14.NetCore.Sitemap
+namespace f14.Sitemap
 {
     /// <summary>
     /// Implements logic to build xml sitemap.
@@ -15,14 +14,14 @@ namespace f14.NetCore.Sitemap
         private XDocument _xDoc;
         private readonly XDeclaration _xDeclaration;
         private readonly XElement _xRoot;
-        private readonly IEnumerable<ISitemapEntry> _sitemapEntries;
+        private readonly IEnumerable<ISitemapElement> _sitemapEntries;
 
         /// <summary>
         /// Creates new instance of builder with specific params. This ctor using default xml declaration: version - 1.0; encoding - utf-8; standalone - yes.
         /// </summary>
         /// <param name="xRoot">The sitemap root element. Example: sitemapindex, urlset, etc.</param>
         /// <param name="sitemapEntries">The collection with sitemap entries.</param>
-        public XmlSitemapBuilder(XElement xRoot, IEnumerable<ISitemapEntry> sitemapEntries)
+        public XmlSitemapBuilder(XElement xRoot, IEnumerable<ISitemapElement> sitemapEntries)
             : this(new XDeclaration("1.0", "utf-8", "yes"), xRoot, sitemapEntries)
         {
 
@@ -33,7 +32,7 @@ namespace f14.NetCore.Sitemap
         /// <param name="xDeclaration">The xml declaration.</param>
         /// <param name="xRoot">The sitemap root element. Example: sitemapindex, urlset, etc.</param>
         /// <param name="sitemapEntries">The collection with sitemap entries.</param>
-        public XmlSitemapBuilder(XDeclaration xDeclaration, XElement xRoot, IEnumerable<ISitemapEntry> sitemapEntries)
+        public XmlSitemapBuilder(XDeclaration xDeclaration, XElement xRoot, IEnumerable<ISitemapElement> sitemapEntries)
         {
             _xDeclaration = xDeclaration;
             _xRoot = xRoot;

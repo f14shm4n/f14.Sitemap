@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace f14.NetCore.Sitemap.Abstractions
+namespace f14.Sitemap
 {
     /// <summary>
     /// Provides base interface for building sitemaps.

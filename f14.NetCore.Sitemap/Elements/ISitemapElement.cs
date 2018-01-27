@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.Linq;
 
-namespace f14.NetCore.Sitemap.Abstractions
+namespace f14.Sitemap
 {
     /// <summary>
     /// Represents the base sitemap enty interface.
     /// </summary>
-    public interface ISitemapEntry
+    public interface ISitemapElement
     {
         /// <summary>
         /// Create new <see cref="XElement"/> from current entry.

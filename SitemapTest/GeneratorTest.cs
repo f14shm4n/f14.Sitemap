@@ -1,6 +1,4 @@
-using f14.NetCore.Sitemap;
-using f14.NetCore.Sitemap.Abstractions;
-using f14.NetCore.Sitemap.Entries;
+using f14.Sitemap;
 using System;
 using System.Linq;
 using System.Xml.Linq;
@@ -31,20 +29,20 @@ namespace SitemapTest
         public void SitemapIndex()
         {
             const int count = 10;
-            var items = new IndexEntry[count];
+            var items = new IndexElement[count];
 
             for (var i = 0; i < count; i++)
             {
-                items[i] = new IndexEntry
+                items[i] = new IndexElement
                 {
                     Url = "http://example.com/page" + (i + 1),
                     Modified = DateTime.Now.Add(TimeSpan.FromMinutes(i + 1))
                 };
             }
 
-            var xDoc = new XmlSitemapBuilder(new XElement(Constants.SitemapIndexName), items).Build();
+            var xDoc = SitemapBuilder.BuildIndexMap(items);
 
-            Assert.Equal(count, xDoc.Root.Descendants(Constants.NS + "sitemap").Count());
+            Assert.Equal(count, xDoc.Root.Descendants(SitemapConstants.NS + "sitemap").Count());
 
             xDoc.Save("sitemap_index.xml");
         }
@@ -53,11 +51,11 @@ namespace SitemapTest
         public void Urlset()
         {
             const int count = 10;
-            var items = new UrlEntry[count];
+            var items = new UrlElement[count];
 
             for (var i = 0; i < count; i++)
             {
-                var urlEntry = new UrlEntry
+                var urlEntry = new UrlElement
                 {
                     Url = "http://example.com/page" + (i + 1),
                     Modified = DateTime.Now.Add(TimeSpan.FromMinutes(i + 1)),
@@ -67,7 +65,7 @@ namespace SitemapTest
 
                 for (var j = 0; j < 5; j++)
                 {
-                    urlEntry.Images.Add(new ImageEntry
+                    urlEntry.Images.Add(new ImageElement
                     {
                         Url = "http://example.com/page" + i + "/image" + j + ".jpg",
                         Caption = "Image caption " + j,
@@ -80,9 +78,9 @@ namespace SitemapTest
                 items[i] = urlEntry;
             }
 
-            var xDoc = new XmlSitemapBuilder(new XElement(Constants.UrlsetName, Constants.GoogleImageAttribute), items).Build();
+            var xDoc = SitemapBuilder.BuildUrlset(items);
 
-            Assert.Equal(count, xDoc.Root.Descendants(Constants.NS + "url").Count());
+            Assert.Equal(count, xDoc.Root.Descendants(SitemapConstants.NS + "url").Count());
 
             xDoc.Save("urlset.xml");
         }

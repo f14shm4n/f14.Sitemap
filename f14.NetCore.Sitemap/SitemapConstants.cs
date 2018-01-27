@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.Linq;
 
-namespace f14.NetCore.Sitemap
+namespace f14.Sitemap
 {
     /// <summary>
     /// Provides some useful values.
     /// </summary>
-    public sealed class Constants
+    public sealed class SitemapConstants
     {
         /// <summary>
         /// http://www.sitemaps.org/schemas/sitemap/0.9

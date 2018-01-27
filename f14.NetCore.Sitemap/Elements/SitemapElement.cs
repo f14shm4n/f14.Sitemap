@@ -1,16 +1,15 @@
-﻿using f14.NetCore.Sitemap.Abstractions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace f14.NetCore.Sitemap.Entries
+namespace f14.Sitemap
 {
     /// <summary>
     /// Represents the base sitemap entry implementation.
     /// </summary>
-    public abstract class BaseEntry : ISitemapEntry
+    public abstract class SitemapElement : ISitemapElement
     {
         /// <summary>
         /// The resource url.
@@ -30,10 +29,10 @@ namespace f14.NetCore.Sitemap.Entries
         /// <param name="root">The root element.</param>
         public virtual void BuildDefault(XElement root)
         {
-            root.Add(new XElement(Constants.NS + "loc", Url));
+            root.Add(new XElement(SitemapConstants.NS + "loc", Url));
             if (Modified.HasValue)
             {
-                root.Add(new XElement(Constants.NS + "lastmod", Modified.Value.ToString("yyyy-MM-ddTHH:mm:ss.f") + "+00:00"));
+                root.Add(new XElement(SitemapConstants.NS + "lastmod", Modified.Value.ToString("yyyy-MM-ddTHH:mm:ss.f") + "+00:00"));
             }
         }
         /// <summary>
@@ -41,7 +40,10 @@ namespace f14.NetCore.Sitemap.Entries
         /// </summary>
         /// <param name="root">The root element.</param>
         public abstract void BuildXElement(XElement root);
-
+        /// <summary>
+        /// Create new <see cref="XElement"/> from current entry.
+        /// </summary>
+        /// <returns>The specified <see cref="XElement"/>.</returns>
         public XElement ToXElement()
         {
             var root = new XElement(RootElementName);

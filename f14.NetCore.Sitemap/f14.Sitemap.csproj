@@ -1,26 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.0;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard1.0</TargetFrameworks>
     <Authors>f14shm4n</Authors>
     <Company>f14shm4n</Company>
     <Description>This library provides a useful classes for create the xml sitemap.</Description>
     <Copyright>f14shm4n</Copyright>
     <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/f14shm4n/f14.NetCore.Sitemap.git</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/f14shm4n/f14.NetCore.Sitemap.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/f14shm4n/f14.Sitemap</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/f14shm4n/f14.Sitemap.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>NetStandard;Net45;Sitemap</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>1.1.0</Version>
+    <PackageId>f14.Sitemap</PackageId>
+    <RootNamespace>f14.Sitemap</RootNamespace>
+    <AssemblyName>f14.Sitemap</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netcoreapp1.0\f14.NetCore.Sitemap.xml</DocumentationFile>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\net45\f14.NetCore.Sitemap.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netcoreapp1.0\f14.Sitemap.xml</DocumentationFile>
   </PropertyGroup>
 
 </Project>

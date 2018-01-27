@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "f14.NetCore.Sitemap", "f14.NetCore.Sitemap\f14.NetCore.Sitemap.csproj", "{5AF94B1D-B80A-4FC9-B908-64EBD85C3118}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "f14.Sitemap", "f14.NetCore.Sitemap\f14.Sitemap.csproj", "{5AF94B1D-B80A-4FC9-B908-64EBD85C3118}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F25D4435-41EF-42F8-A475-477CADC30665}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SitemapTest", "SitemapTest\SitemapTest.csproj", "{21A53D8D-AB54-4388-9F9A-D983016D1E9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SitemapTest", "SitemapTest\SitemapTest.csproj", "{21A53D8D-AB54-4388-9F9A-D983016D1E9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
